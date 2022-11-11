@@ -20,7 +20,7 @@ func SetCurriculum(r *gin.Engine) {
 	r.POST("/curriculum", getCurrirulum)
 }
 func getCurrirulum(c *gin.Context) {
-	targetUrl := "http://jwxt.ahut.edu.cn/jsxsd/framework/main_index_loadkb.jsp"
+	targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/framework/main_index_loadkb.jsp"
 	method := "POST"
 	contentType := "application/x-www-form-urlencoded; charset=UTF-8"
 	sjms := "9697EC28830EB8C8E0531583640A461C"
@@ -34,7 +34,7 @@ func getCurrirulum(c *gin.Context) {
 		return
 	}
 	if date.Date == "all" {
-		targetUrl = "http://jwxt.ahut.edu.cn/jsxsd/xskb/xskb_list.do"
+		targetUrl = "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/xskb/xskb_list.do"
 		method = "GET"
 	}
 	if date.Date == "" {

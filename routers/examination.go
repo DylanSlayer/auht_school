@@ -20,7 +20,7 @@ func CollectExaminations(r *gin.Engine) {
 
 //随堂考试查询
 func getExamInClass(c *gin.Context) {
-	targetUtl := "http://jwxt.ahut.edu.cn/jsxsd/xsks/xsstk_list"
+	targetUtl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/xsks/xsstk_list"
 	//先请求随堂考试获取考试信息
 	formValues := url.Values{}
 	formValues.Set("xnxqid", utils.GetCurrentTerm())
@@ -86,7 +86,7 @@ func getExamInClass(c *gin.Context) {
 }
 
 func getExamCommon(c *gin.Context) {
-	targetUrl := "http://jwxt.ahut.edu.cn/jsxsd/xsks/xsksap_list"
+	targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/xsks/xsksap_list"
 	method := "POST"
 	contentType := "application/x-www-form-urlencoded"
 	formValues := url.Values{}
