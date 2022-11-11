@@ -1,5 +1,6 @@
 server:
-  port: 10107
+  port: 10108
+  base-url: http://211.70.149.143
 
 api:
   rainbow-key: f6d1fd8c04d5b3ac0de1c4039308073f

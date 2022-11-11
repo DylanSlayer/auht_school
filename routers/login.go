@@ -1,6 +1,7 @@
 package routers
 
 import (
+	"auht_school/common"
 	"auht_school/model"
 	"auht_school/utils"
 	"bytes"
@@ -22,7 +23,7 @@ func LoginRouter(r *gin.Engine) {
 //登录检查，查看登录信息是否有效,没问题返回学生基本信息
 func getUserInfo(c *gin.Context) {
 
-	targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/framework/xsMain_new.jsp?t1=1"
+	targetUrl := common.Settings.ServInfo.BaseUrl + "/jsxsd/framework/xsMain_new.jsp?t1=1"
 	request, err := utils.GetRequest(c, "GET", targetUrl, "", nil)
 	if err != nil {
 		c.String(http.StatusInternalServerError, "服务器内部错误，无法创建请求，请稍后重试或联系管理员处理")
@@ -76,7 +77,7 @@ func loginHandler(c *gin.Context) {
 	}
 
 	//像服务器发送登录请求
-	targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/xk/LoginToXk"
+	targetUrl := common.Settings.ServInfo.BaseUrl + "/jsxsd/xk/LoginToXk"
 	log.Println("loginForm:====> {}", loginForm)
 
 	//创建form数据

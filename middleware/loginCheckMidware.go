@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"auht_school/common"
 	"auht_school/utils"
 	"github.com/gin-gonic/gin"
 	"io/ioutil"
@@ -16,7 +17,7 @@ func LoginCheckMiddleware() gin.HandlerFunc {
 			c.Next()
 			return
 		}
-		targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/framework/xsMain.jsp"
+		targetUrl := common.Settings.ServInfo.BaseUrl + "/jsxsd/framework/xsMain.jsp"
 		request, err := utils.GetRequest(c, "GET", targetUrl, "", nil)
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusInternalServerError, "服务器内部错误，无法创建请求，请稍后重试或联系管理员处理")

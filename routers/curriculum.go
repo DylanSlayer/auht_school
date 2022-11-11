@@ -1,6 +1,7 @@
 package routers
 
 import (
+	"auht_school/common"
 	"auht_school/model"
 	"auht_school/utils"
 	"bytes"
@@ -20,7 +21,7 @@ func SetCurriculum(r *gin.Engine) {
 	r.POST("/curriculum", getCurrirulum)
 }
 func getCurrirulum(c *gin.Context) {
-	targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/framework/main_index_loadkb.jsp"
+	targetUrl := common.Settings.ServInfo.BaseUrl + "/jsxsd/framework/main_index_loadkb.jsp"
 	method := "POST"
 	contentType := "application/x-www-form-urlencoded; charset=UTF-8"
 	sjms := "9697EC28830EB8C8E0531583640A461C"
@@ -34,7 +35,7 @@ func getCurrirulum(c *gin.Context) {
 		return
 	}
 	if date.Date == "all" {
-		targetUrl = "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/xskb/xskb_list.do"
+		targetUrl = common.Settings.ServInfo.BaseUrl + "/jsxsd/xskb/xskb_list.do"
 		method = "GET"
 	}
 	if date.Date == "" {

@@ -16,7 +16,8 @@ type ApiConfig struct {
 }
 
 type ServerConfig struct {
-	Port int `yaml:"port"`
+	Port    int    `mapstructure:"port"`
+	BaseUrl string `mapstructure:"base-url"`
 }
 
 ////数据集
