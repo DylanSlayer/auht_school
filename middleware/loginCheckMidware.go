@@ -35,7 +35,7 @@ func LoginCheckMiddleware() gin.HandlerFunc {
 		title := regexp.MustCompile(`<title>(.*?)</title>`)
 		findString := title.FindString(body)
 		log.Println("logString   ", findString)
-		if findString == "<title>登录</title>" {
+		if findString == "<title>Login - 安徽工业大学</title>" {
 			//用户没有登录或登录失效
 			c.AbortWithStatusJSON(200, gin.H{
 				"code": 211,
