@@ -16,7 +16,7 @@ func LoginCheckMiddleware() gin.HandlerFunc {
 			c.Next()
 			return
 		}
-		targetUrl := "http://jwxt.ahut.edu.cn/jsxsd/framework/xsMain.jsp"
+		targetUrl := "https://vpncas.ahut.edu.cn/http/77726476706e69737468656265737421fae05988693160456a468ca88d1b203b/jsxsd/framework/xsMain.jsp"
 		request, err := utils.GetRequest(c, "GET", targetUrl, "", nil)
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusInternalServerError, "服务器内部错误，无法创建请求，请稍后重试或联系管理员处理")
